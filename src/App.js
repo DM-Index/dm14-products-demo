@@ -40,6 +40,9 @@ class App extends Component {
   }
 
   render() {
+    let prods = this.state.products.map(prod => (
+      <Product selectItem={this.selectItem} prod={prod} key={prod.id} />
+    ));
     let selectedItem = this.state.products.find(
       item => item.id === this.state.selectedId
     );
